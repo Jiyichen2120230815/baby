@@ -1,0 +1,42 @@
+server:
+  port: 8002
+  #  Gzip配置
+  compression:
+    enabled: true
+    mime-types: application/javascript,text/css,application/json,application/xml,text/html,text/xml,text/plain
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 100MB
+      max-request-size: 150MB
+
+  datasource:
+    username: root
+    password: 111111
+    url: jdbc:mysql://1.117.147.236:3306/baby_talk?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.management.**.entity
+  mapper-locations: classpath*:mybatis/mapper/**/*.xml
+
+#debug: true
+
+jwt:
+  secret: afweoiowiufherfyh9q8hf2151456
+  subject: cst
+  jwt_iss: cst
+
+#图片上传的绝对路径
+file:
+  rootUrl: E:\uploadTest
+
+#通过url访问文件的url统一前缀
+path:
+  static: staticFile
+
